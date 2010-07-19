@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.version = 0.4
   s.authors = ["Florian Gilcher"]
   s.email = "florian.gilcher@asquera.de"
+  s.homepage = "http://github.com/Asquera/sinatra-views"
   s.summary = "Sinatra Plugin to provide a View layer to Sinatra."
   s.description = <<-DESC 
   Sinatra Plugin to provide a View layer to Sinatra.
