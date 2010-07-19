@@ -1,6 +1,5 @@
 require 'sinatra/views'
 require 'padrino-core'
-require 'pp'
 
 module Padrino
   module Views
