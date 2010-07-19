@@ -15,8 +15,8 @@ module Padrino
     module InstanceMethods
       
       def lookup_module(names)
-        names_with_controller = [request.match.route.controller.to_sym] + names
-        mod = settings.view_modules[names_with_controller] || settings.view_modules[names]
+        controller_names = [request.controller.to_sym] + names
+        settings.view_modules[controller_names] || settings.view_modules[names]
       end
       
     end
