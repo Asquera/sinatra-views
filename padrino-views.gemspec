@@ -1,10 +1,8 @@
 # encoding: utf-8
 
-require 'lib/version'
-
 Gem::Specification.new do |s|
   s.name = "padrino-views"
-  s.version = 0.4
+  s.version = "0.4.1"
   s.authors = ["Florian Gilcher"]
   s.email = "florian.gilcher@asquera.de"
   s.homepage = "http://github.com/Asquera/sinatra-views"
