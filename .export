@@ -1,0 +1,3 @@
+#!/bin/sh
+~/src/darcs-to-git/darcs-to-git ../sinatra-views --clean-commit-messages --default-email=florian.gilcher@asquera.de
+

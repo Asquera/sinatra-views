@@ -1,3 +1,5 @@
+require 'padrino/views'
+
 class PadrinoTest < Padrino::Application
   register Padrino::Views
   set :environment, :test
@@ -40,8 +42,8 @@ context "Padrino app class with views extension" do
   end.kind_of(Module)
   
   asserts "the list views methods" do
-    topic.view_modules[[:test, :list]].instance_methods
-  end.includes(:html)
+    topic.view_modules[[:test, :list]].instance_methods.map(&:to_s)
+  end.includes("html")
 end
 
 context "Full padrino app" do

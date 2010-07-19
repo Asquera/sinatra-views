@@ -1,6 +1,5 @@
 require 'rack/test'
 require 'riot'
-require 'padrino/views'
 
 # Specify your app using the #app helper inside a context.
 # If you don't specify one, Riot::Rack will recursively look for a config.ru file.

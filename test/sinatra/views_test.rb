@@ -1,3 +1,5 @@
+require 'sinatra/views'
+
 class SinatraTest < Sinatra::Base
   register Sinatra::Views
   set :environment, :test
@@ -48,8 +50,8 @@ context "Sinatra app class with views extension" do
   end.kind_of(Module)
   
   asserts "the list views methods" do
-    topic.view_modules[[:list]].instance_methods
-  end.includes(:html)
+    topic.view_modules[[:list]].instance_methods.map(&:to_s)
+  end.includes("html")
 end
 
 context "Full sinatra app" do
