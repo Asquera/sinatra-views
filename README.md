@@ -1,7 +1,7 @@
 Views for Sinatra and Padrino
 =============================
 
-sinatra-views provides a view implementation inspired by Agavi or Symphony to Sinatra and Padrino. This saves the hassle of implementing special functionality based on content types on your own.
+sinatra-views provides a view implementation inspired by Agavi to Sinatra and Padrino. This saves the hassle of implementing special functionality based on content types on your own.
 
 Example
 -------
@@ -63,4 +63,4 @@ View names can be Arrays, so namespacing views is easy:
 Padrino
 -------
 
-Sinatra::Views comes with a special extension for Padrino. Padrino users are advised to register `Padrino::Views` instead. This provides automatic namespacing by controller. Views defined within a controller will be used when calling `view` inside a controller context. Views defined outside of a controller are global and can be accessed from everywhere, as long as there is no controller view of the same name.
+Sinatra::Views is also available as a special extension for Padrino. Padrino users are advised to install and require `padrino-views` and then register `Padrino::Views` instead. This provides automatic namespacing by controller. Views defined within a controller will be used when calling `view` inside a controller context. Views defined outside of a controller are global and can be accessed from everywhere, as long as there is no controller view of the same name.
