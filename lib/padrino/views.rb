@@ -5,10 +5,10 @@ module Padrino
   module Views
     
     def self.registered(app)
-      app.send(:include, Sinatra::Views::InstanceMethods)
-      app.extend(Sinatra::Views::ClassMethods)
-      app.send(:include, InstanceMethods)
-      app.extend(ClassMethods)
+      app.send(:include, ::Sinatra::Views::InstanceMethods)
+      app.extend(::Sinatra::Views::ClassMethods)
+      app.send(:include, ::Padrino::Views::InstanceMethods)
+      app.extend(::Padrino::Views::ClassMethods)
     end
     
     module InstanceMethods
