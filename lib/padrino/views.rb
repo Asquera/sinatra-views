@@ -4,10 +4,7 @@ require 'pp'
 
 module Padrino
   module Views
-
-    ##
-    # Main class that register this extension
-    #
+    
     def self.registered(app)
       app.send(:include, Sinatra::Views::InstanceMethods)
       app.extend(Sinatra::Views::ClassMethods)
@@ -16,15 +13,19 @@ module Padrino
     end
     
     module InstanceMethods
-      def view(*names)
-        names.unshift request.match.route.controller.to_sym
-        super(*names)
+      
+      def lookup_module(names)
+        names_with_controller = [request.match.route.controller.to_sym] + names
+        mod = settings.view_modules[names_with_controller] || settings.view_modules[names]
       end
+      
     end
     
     module ClassMethods
       def view(*names, &block)
-        names.unshift @_controller.first
+        if @_controller
+          names.unshift @_controller.first
+        end
         super(*names, &block)
       end
     end

@@ -9,7 +9,11 @@ class PadrinoTest < Padrino::Application
     
     get '/foo', :provides => [:html] do
       view :list
-    end 
+    end
+    
+    get '/test' do
+      view :test, :format => :html
+    end
   end
   
   controller :test do
@@ -17,6 +21,12 @@ class PadrinoTest < Padrino::Application
       def html
         'test/hoge'
       end
+    end
+  end
+  
+  view :test do
+    def html
+      "test/fuge"
     end
   end
 end
@@ -30,7 +40,6 @@ context "Padrino app class with views extension" do
   end.kind_of(Module)
   
   asserts "the list views methods" do
-    puts topic.view_modules
     topic.view_modules[[:test, :list]].instance_methods
   end.includes(:html)
 end
@@ -48,5 +57,11 @@ context "Full padrino app" do
     setup { get 'test/foo.html' }
     
     asserts(:body).equals('test/hoge')
+  end
+  
+  context "with views outside controller" do
+    setup { get 'test/test' }
+    
+    asserts(:body).equals('test/fuge')
   end
 end

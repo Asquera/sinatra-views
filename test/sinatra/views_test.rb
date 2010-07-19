@@ -44,7 +44,7 @@ context "Sinatra app class with views extension" do
   app SinatraTest
   
   asserts "the list view" do
-    topic.view_modules[:list]
+    topic.view_modules[[:list]]
   end.kind_of(Module)
   
   asserts "the list views methods" do
